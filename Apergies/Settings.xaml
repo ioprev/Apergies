@@ -1,0 +1,49 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="Apergies.Settings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:local="clr-namespace:Apergies.Model"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True" Loaded="PhoneApplicationPage_Loaded">
+        
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush  ImageSource="AboutBackground.png" Stretch="UniformToFill" />
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="PageTitle" Text="Επιλογές" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <toolkit:ToggleSwitch x:Name="toggleTile" Content="Ενεργοποίηση" Margin="6,59,-6,461" Checked="toggleTile_Checked" Unchecked="toggleTile_Unchecked" />
+            <toolkit:ToggleSwitch x:Name="toggleTileUpdate" Content="Αυτόματη ενημέρωση" Margin="6,179,-6,341" Checked="toggleTileUpdate_Checked" Unchecked="toggleTileUpdate_Unchecked" />
+            <TextBlock Height="47" HorizontalAlignment="Left" Margin="9,17,0,0" Name="textBlock1" Text="Ενεργό πλακίδιο (Live Tile)" VerticalAlignment="Top" Width="396" FontSize="32" FontWeight="Normal" FontFamily="Segoe WP Light" Opacity="0.7" />
+            <TextBlock Height="67" HorizontalAlignment="Left" Margin="31,136,0,0" Name="useInfoBlock" Text="Επιτρέπει την εμφάνιση πληροφοριών στο πλακίδιο (tile) της εφαρμογής" VerticalAlignment="Top" Width="400" FontFamily="Segoe WP Light" TextWrapping="Wrap" />
+            <TextBlock FontFamily="Segoe WP Light" Height="87" HorizontalAlignment="Left" Margin="31,258,0,0" Name="updateInfoBlock" Text="Ενεργοποιεί την αυτόματη ενημέρωση των πληροφοριών του πλακιδίου (tile) ακόμα και όταν η εφαρμογή δεν λειτουργεί" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" />
+        </Grid>
+    </Grid>
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" Opacity="0.5" BackgroundColor="Gray">
+            <shell:ApplicationBarIconButton IconUri="/Images/back.png" Text="Επιστροφή" Click="ApplicationBarIconButton_Click" />
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+</phone:PhoneApplicationPage>
