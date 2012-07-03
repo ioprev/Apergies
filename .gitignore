@@ -49,15 +49,15 @@ _ReSharper*/
 # Office Temp Files
 ~$*
 
-#NuGet
-packages/
-
 #ncrunch
 *ncrunch*
 *crunch*.local.xml
 
 # visual studio database projects
 *.dbmdl
+
+# Application package
+*.xap
 
 # Application Icons
 Icons/
